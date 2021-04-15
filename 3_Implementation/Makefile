@@ -34,7 +34,7 @@ endif
 # Project Output name
 PROJECT_OUTPUT = $(call FixPath,$(BUILD)/$(PROJECT_NAME).$(EXEC))
 
-TEST_OUTPUT = $(call FixPath $(BUILD)/Test_$(PROJECT_NAME).$(EXEC))
+TEST_OUTPUT = $(call FixPath,$(BUILD)/Test_$(PROJECT_NAME).$(EXEC))
 
 # Document files
 DOCUMENTATION_OUTPUT = documentation/html
