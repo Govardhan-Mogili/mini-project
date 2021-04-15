@@ -12,15 +12,29 @@ TEST_SRC = src/calculator_operations.c\
 test/test_calculator_operations.c\
 unity/unity.c\
 
-TEST_OUTPUT = $(BUILD)/Test_$(PROJECT_NAME)
+
 
 # All include folders with header files
 INC	= -Iinc\
 -Iunity\
+#To check if the OS is Windows or Linux and set the executable file extension and delete command accordingly
+ifdef OS
+   RM = del /q
+   FixPath = $(subst /,\,$1)
+   EXEC = exe
+else
+   ifeq ($(shell uname), Linux)
+      RM = rm -rf
+      FixPath = $1
+	  EXEC = out
+   endif
+endif
 
 
 # Project Output name
-PROJECT_OUTPUT = $(BUILD)/$(PROJECT_NAME)
+PROJECT_OUTPUT = $(call FixPath,$(BUILD)/$(PROJECT_NAME).$(EXEC))
+
+TEST_OUTPUT = $(call FixPath,$(BUILD)/Test_$(PROJECT_NAME).$(EXEC))
 
 # Document files
 DOCUMENTATION_OUTPUT = documentation/html
@@ -33,7 +47,7 @@ $(PROJECT_NAME):all
 
 all: $(SRC) $(BUILD)
 	gcc $(SRC) $(INC) -c 
-	gcc $(SRC) $(INC) project_main.c -lm -o $(PROJECT_OUTPUT).out
+	gcc $(SRC) $(INC) project_main.c -lm -o $(PROJECT_OUTPUT)
 
 # Call `make run` to run the application
 run:$(PROJECT_NAME)
@@ -44,7 +58,7 @@ doc:
 	make -C ./documentation
 
 # Build and run the unit tests
-test:$(BUILD)
+test: $(BUILD)
 	gcc $(TEST_SRC) $(INC) -lm -o $(TEST_OUTPUT)
 	./$(TEST_OUTPUT)
 
