@@ -48,6 +48,8 @@ test:$(BUILD)
 	gcc $(TEST_SRC) $(INC) -lm -o $(TEST_OUTPUT)
 	./$(TEST_OUTPUT)
 
+cppcheck:
+	cppcheck --enable=all $(SRC) project_main.c
 # Remove all the built files, invoke by `make clean`
 clean:
 	rm -rf $(BUILD) $(DOCUMENTATION_OUTPUT)
