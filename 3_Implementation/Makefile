@@ -5,8 +5,7 @@ PROJECT_NAME = Calculator
 BUILD = build
 
 # All source code files
-SRC = /project_main.c\
-src/calculator_operations.c\
+SRC =src/calculator_operations.c\
 
 # All test source files
 TEST_SRC = src/calculator_operations.c\
@@ -33,7 +32,8 @@ $(PROJECT_NAME):all
 .PHONY: run clean test doc all
 
 all: $(SRC) $(BUILD)
-	gcc $(SRC) $(INC) -lm -o $(PROJECT_OUTPUT).out
+	gcc $(SRC) $(INC) -c 
+	gcc $(SRC) $(INC) main.c -lm -o $(PROJECT_OUTPUT).out
 
 # Call `make run` to run the application
 run:$(PROJECT_NAME)
