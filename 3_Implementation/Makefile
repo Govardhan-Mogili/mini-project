@@ -33,7 +33,7 @@ $(PROJECT_NAME):all
 
 all: $(SRC) $(BUILD)
 	gcc $(SRC) $(INC) -c 
-	gcc $(SRC) $(INC) main.c -lm -o $(PROJECT_OUTPUT).out
+	gcc $(SRC) $(INC) project_main.c -lm -o $(PROJECT_OUTPUT).out
 
 # Call `make run` to run the application
 run:$(PROJECT_NAME)
