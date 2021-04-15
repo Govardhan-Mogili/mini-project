@@ -12,7 +12,7 @@ TEST_SRC = src/calculator_operations.c\
 test/test_calculator_operations.c\
 unity/unity.c\
 
-TEST_OUTPUT = $(call FixPath $(BUILD)/Test_$(PROJECT_NAME).$(EXEC))
+
 
 # All include folders with header files
 INC	= -Iinc\
@@ -33,6 +33,8 @@ endif
 
 # Project Output name
 PROJECT_OUTPUT = $(call FixPath,$(BUILD)/$(PROJECT_NAME).$(EXEC))
+
+TEST_OUTPUT = $(call FixPath $(BUILD)/Test_$(PROJECT_NAME).$(EXEC))
 
 # Document files
 DOCUMENTATION_OUTPUT = documentation/html
@@ -56,7 +58,7 @@ doc:
 	make -C ./documentation
 
 # Build and run the unit tests
-test:$(BUILD)
+test: $(BUILD)
 	gcc $(TEST_SRC) $(INC) -lm -o $(TEST_OUTPUT)
 	./$(TEST_OUTPUT)
 
