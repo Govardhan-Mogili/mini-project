@@ -1,6 +1,8 @@
 ## INTROUCTION
    
    A fully featured calculator which involves functions like basic operations, financial operations and some other operations. The project includes  logarithms, factorials, exponentials, power functions, finding simple and compound interests, total amount. The calculator program is written in C language with proper test cases and makefile.
+   
+![Complex Calculator](https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.corporatefinanceinstitute.com%2Fassets%2Ffinancial-calculator.jpeg&imgrefurl=https%3A%2F%2Fcorporatefinanceinstitute.com%2Fresources%2Fknowledge%2Fother%2Ftop-3-financial-calculators%2F&tbnid=eZlDJZ9aPiuazM&vet=12ahUKEwjRlrrRo4LwAhUb33MBHZygDRYQMygQegUIARDJAg..i&docid=__RTJOd0-k2w6M&w=1200&h=800&q=photo%20of%20financial%20calculator&ved=2ahUKEwjRlrrRo4LwAhUb33MBHZygDRYQMygQegUIARDJAg) 
 
 Build | Code Quality | Unity | Git Inspector
 |---------|------------|-----------|----------------
